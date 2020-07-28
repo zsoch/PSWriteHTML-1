@@ -260,6 +260,73 @@ $Script:Configuration = [ordered] @{
                 JS      = "$PSScriptRoot\..\Resources\JS\fullCalendar.js"
             }
         }
+        <#
+        FullCalendarCore        = @{
+            Comment = 'FullCalendar Core'
+            Header  = @{
+                CssLink = 'https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.3.1/main.min.css'
+                Css     = "$PSScriptRoot\..\Resources\CSS\fullCalendarCore.css"
+                JSLink  = 'https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.3.1/main.min.js'
+                JS      = "$PSScriptRoot\..\Resources\JS\fullCalendarCore.js"
+            }
+
+        }
+        FullCalendarDayGrid     = @{
+            Comment = 'FullCalendar DayGrid'
+            Header  = @{
+                CssLink = 'https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.3.0/main.min.css'
+                Css     = "$PSScriptRoot\..\Resources\CSS\fullCalendarDayGrid.css"
+                JSLink  = 'https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.3.0/main.min.js'
+                JS      = "$PSScriptRoot\..\Resources\JS\fullCalendarDayGrid.js"
+            }
+
+        }
+        FullCalendarInteraction = @{
+            Comment = 'FullCalendar Interaction'
+            Header  = @{
+                JSLink = 'https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.3.0/main.min.js'
+                JS     = "$PSScriptRoot\..\Resources\JS\FullCalendarInteraction.js"
+            }
+
+        }
+        FullCalendarList        = @{
+            Comment = 'FullCalendar List'
+            Header  = @{
+                CssLink = 'https://cdn.jsdelivr.net/npm/@fullcalendar/list@4.3.0/main.min.css'
+                Css     = "$PSScriptRoot\..\Resources\CSS\fullCalendarList.css"
+                JSLink  = 'https://cdn.jsdelivr.net/npm/@fullcalendar/list@4.3.0/main.min.js'
+                JS      = "$PSScriptRoot\..\Resources\JS\fullCalendarList.js"
+            }
+
+        }
+        FullCalendarRRule       = @{
+            Comment = 'FullCalendar RRule'
+            Header  = @{
+                JSLink = 'https://cdn.jsdelivr.net/npm/@fullcalendar/rrule'
+                JS     = "$PSScriptRoot\..\Resources\JS\fullCalendarRRule.js"
+                #https://cdn.jsdelivr.net/npm/@fullcalendar/rrule@4.3.0/main.min.js
+            }
+        }
+        FullCalendarTimeGrid    = @{
+            Comment = 'FullCalendar TimeGrid'
+            Header  = @{
+                CssLink = 'https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.3.0/main.min.css'
+                Css     = "$PSScriptRoot\..\Resources\CSS\fullCalendarTimeGrid.css"
+                JSLink  = 'https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.3.0/main.min.js'
+                JS      = "$PSScriptRoot\..\Resources\JS\fullCalendarTimeGrid.js"
+            }
+        }
+        FullCalendarTimeLine    = @{
+            Comment = 'FullCalendar TimeLine'
+            Header  = @{
+                CssLink = 'https://cdn.jsdelivr.net/npm/@fullcalendar/timeline@4.3.0/main.min.css'
+                Css     = "$PSScriptRoot\..\Resources\CSS\fullCalendarTimeLine.css"
+                JSLink  = 'https://cdn.jsdelivr.net/npm/@fullcalendar/timeline@4.3.0/main.min.js'
+                JS      = "$PSScriptRoot\..\Resources\JS\fullCalendarTimeLine.js"
+            }
+
+        }
+        #>
         HideSection          = @{
             Comment      = 'Hide Section Code'
             HeaderAlways = @{
@@ -281,10 +348,10 @@ $Script:Configuration = [ordered] @{
             Header  = @{
                 JSLink = @(
                     'https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js'
-                    'https://cdnjs.cloudflare.com/ajax/libs/justgage/1.3.5/justgage.min.js'
+                    'https://cdnjs.cloudflare.com/ajax/libs/justgage/1.3.3/justgage.min.js'
                 )
                 JS     = @(
-                    "$PSScriptRoot\..\Resources\JS\raphael.min.js"
+                    "$PSScriptRoot\..\Resources\JS\raphael-min.js"
                     "$PSScriptRoot\..\Resources\JS\justgage.min.js"
                 )
             }
@@ -454,5 +521,6 @@ function Save-Resource {
 #Save-Resource -ResourceLinks $($Script:Configuration).Features.ChartsApex.Header.JsLink -Type 'JS'
 #Save-Resource -ResourceLinks $($Script:Configuration).Features.ChartsApex.Header.CssLink -Type 'CSS'
 
-#Save-Resource -ResourceLinks $($Script:Configuration).Features.JustGage.Header.JsLink -Type 'JS' -Target $($Script:Configuration).Features.JustGage.Header.Js -Verbose
-#Save-Resource -ResourceLinks $($Script:Configuration).Features.JustGage.Header.CssLink -Type 'CSS' -Target $($Script:Configuration).Features.JustGage.Header.Css -Verbose
+
+#Save-Resource -ResourceLinks $($Script:Configuration).Features.FullCalendar.Header.JsLink -Type 'JS' -Target $($Script:Configuration).Features.FullCalendar.Header.Js -Verbose
+#Save-Resource -ResourceLinks $($Script:Configuration).Features.FullCalendar.Header.CssLink -Type 'CSS' -Target $($Script:Configuration).Features.FullCalendar.Header.Css -Verbose
