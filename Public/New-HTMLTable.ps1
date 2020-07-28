@@ -460,14 +460,9 @@ function New-HTMLTable {
     }
 
     If ($TableColumnOptions.Count -gt 0) { 
-        If ($Options.columnDefs) { 
+        If ($Options.ContainsKey('columnDefs')) { 
             foreach ($_ in $TableColumnOptions) { 
                 $Options.columnDefs += $_
-
-                # If we have column width specified and the $Width parameter is set, then remove it
-                if ($_.width -and $Width) { 
-                    $Width = $null
-                }
             }
         }
         else { 
