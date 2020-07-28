@@ -472,7 +472,7 @@ function New-HTMLTable {
     }
     
     If ($DisableAutoSizeOptimization) { 
-        $Options.autoWidth = $false
+        $Options.autowidth = $false
     }
 
     $Options = $Options | ConvertTo-Json -Depth 6
